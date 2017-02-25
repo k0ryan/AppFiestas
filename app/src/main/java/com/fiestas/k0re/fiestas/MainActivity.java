@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
 		Thread t = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				postData();
+				postData("Solana Vera", "Antonio", "Bachillerato", "2");
 				
 			}
 		});
@@ -31,19 +31,15 @@ public class MainActivity extends Activity {
 
 	
 
-	public void postData() {
+	public void postData(String apellidos, String nombre, String bloque, String curso) {
 
 		String fullUrl = "https://docs.google.com/forms/d/e/1FAIpQLScpPmIQ9W_Y1AGngC1aOMVoH6XKKYxCOSAF_KEG6KMvD-ddJg/formResponse";
 		HttpRequest mReq = new HttpRequest();
-		String col1 = "Apellidos";
-		String col2 = "Nombre";
-		String col3 = "Bachiller";
-        String col4 = "1";
 		
-		String data = "entry.1138757144=" + URLEncoder.encode(col1) + "&" +
-					  "entry.1353392484=" + URLEncoder.encode(col2) + "&" +
-				      "entry.1547412774=" + URLEncoder.encode(col3) + "&" +
-				      "entry.369429584=" + URLEncoder.encode(col4);
+		String data = "entry.1138757144=" + URLEncoder.encode(apellidos) + "&" +
+					  "entry.1353392484=" + URLEncoder.encode(nombre) + "&" +
+				      "entry.1547412774=" + URLEncoder.encode(bloque) + "&" +
+				      "entry.369429584=" + URLEncoder.encode(curso);
 		String response = mReq.sendPost(fullUrl, data);
 		Log.i(myTag, response);
 	} 
