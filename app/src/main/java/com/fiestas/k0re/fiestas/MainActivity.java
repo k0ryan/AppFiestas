@@ -35,10 +35,10 @@ public class MainActivity extends Activity {
 
 		String fullUrl = "https://docs.google.com/forms/d/e/1FAIpQLScpPmIQ9W_Y1AGngC1aOMVoH6XKKYxCOSAF_KEG6KMvD-ddJg/formResponse";
 		HttpRequest mReq = new HttpRequest();
-		String col1 = "col1";
-		String col2 = "col2";
-		String col3 = "col3";
-        String col4 = "col4";
+		String col1 = "Apellidos";
+		String col2 = "Nombre";
+		String col3 = "Bachiller";
+        String col4 = "1";
 		
 		String data = "entry.1138757144=" + URLEncoder.encode(col1) + "&" +
 					  "entry.1353392484=" + URLEncoder.encode(col2) + "&" +
